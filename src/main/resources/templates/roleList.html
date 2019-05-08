@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>role</title>
+</head>
+<body>
+<table border="6">
+    <tr>
+        <td>code</td>
+        <td>name</td>
+        <td>by</td>
+        <td>date</td>
+    </tr>
+    <tr th:each="role:${roleList}">
+        <td th:text="${role.roleCode}"></td>
+        <td th:text="${role.roleName}"></td>
+        <td th:text="${role.createdBy}"></td>
+        <td th:text="${role.creationDate}"></td>
+        <td><a th:href="@{/updateRole(id=${role.id})}">编辑</a></td>
+        <td><a th:href="@{/delRole(id=${role.id})}">删除</a></td>
+    </tr>
+</table>
+</body>
+</html>

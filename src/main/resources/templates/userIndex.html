@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>userInfo</title>
+    <style type="text/css">
+        .lics{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<!--hello:<span th:text="${userList.get(1).userName}"></span><br>-->
+<!--birthday:<span th:text="${#dates.format(userList.get(1).birthday)}"></span>-->
+<ul>
+    <li th:each="user,status:${userList}" th:class="${status.odd}?'lics'">
+        <span th:text="${user.userName}"></span>
+        <span th:if="${user.gender}==true">男</span>
+        <span th:if="${user.gender}==false">女</span>
+    </li>
+</ul>
+</body>
+</html>
